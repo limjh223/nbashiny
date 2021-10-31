@@ -18,3 +18,8 @@ df <- df %>%
     Points = PTS
   )
 
+newdf <- df %>% select(-(2:4))
+
+apply(filter(newdf, Player == "LeBron James")[, c(-1)], 2, diff)
+# bron_diff <- apply(bron[, c(-1)],2, diff)
+# bron_diff
