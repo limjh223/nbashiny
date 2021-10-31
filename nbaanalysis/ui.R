@@ -14,8 +14,8 @@ dashboardPage(
       tabItem(tabName = "dataset",
               fluidRow(
                 column(12, DT::dataTableOutput('mytable'))
-
               )
+              
       ),
 
       tabItem(tabName = "leaguetrends",
@@ -49,18 +49,39 @@ dashboardPage(
 
       tabItem(tabName = "playervs",
               fluidRow(
-                column(12, plotOutput('time')),
+                column(12, DT::dataTableOutput('twoplayer'))),
 
-                selectInput(inputId = "player1",
-                            label = "Select Player 1",
-                            choices = unique(df$Player)),
-                selectInput(inputId = "player2",
-                            label = "Select Player 2",
-                            choices = unique(df$Player)),
-                selectInput(inputId = "season",
-                            label = "Select Season",
-                            choices = unique(df$Year))
-              ))
+              fluidRow(
+                column(4, selectInput(inputId = "player1",
+                                      label = "Select Player 1",
+                                      choices = unique(df$Player))),
+                column(4, selectInput(inputId = "player2",
+                                      label = "Select Player 2",
+                                      choices = unique(df$Player))),
+                column(4, selectInput(inputId = "season",
+                                      label = "Select Season",
+                                      choices = unique(df$Year)))
+              ),
+              
+              fluidRow(
+                column(4, plotOutput('gg')),
+                column(4, plotOutput('ggg')),
+                column(4, plotOutput('salary'))
+              ),
+              
+              fluidRow(
+                column(4, selectInput(inputId = "stat1",
+                                      label = "Select One Statistic",
+                                      choices = names(df)[6:29])),
+                column(4, selectInput(inputId = "stat2",
+                                      label = "Select Another Statistic",
+                                      choices = names(df)[6:29]))
+              )
+              
+                
+                
+                
+              )
 
 
 

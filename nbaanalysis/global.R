@@ -21,5 +21,6 @@ df <- df %>%
 newdf <- df %>% select(-(2:4))
 
 apply(filter(newdf, Player == "LeBron James")[, c(-1)], 2, diff)
+filter(df, (Player == "LeBron James" | Player == "Carmelo Anthony") & Year == 2008)
 # bron_diff <- apply(bron[, c(-1)],2, diff)
 # bron_diff
