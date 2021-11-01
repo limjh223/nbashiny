@@ -20,37 +20,66 @@ dashboardPage(
 
       tabItem(tabName = "leaguetrends",
               fluidRow(
-                column(12, plotOutput('plot1')),
+                column(12, plotOutput('plot1'))),
+                
+              fluidRow(
+                column(4, selectInput(inputId = "year",
+                                      label = "Select Year",
+                                      choices = unique(df$Year))),
+                column(4, selectInput(inputId = "position",
+                                      label = "Select Position",
+                                      choices = unique(df$Pos))),
+                column(4, selectInput(inputId = "stat_cat",
+                                      label = "Select Statistic",
+                                      choices = names(df)[6:29]))),
+              
+              fluidRow(
+                column(12, plotOutput('plot2'))),
+              
+              fluidRow(
+                column(3, selectInput(inputId = "stat_cat2",
+                                      label = "Select Statistic",
+                                      choices = names(df)[6:31])),
+                column(3, selectInput(inputId = "stat_cat3",
+                                      label = "Select Statistic",
+                                      choices = names(df)[6:31])),
+                column(3, selectInput(inputId = "Year",
+                                      label = "Select Year",
+                                      choices = unique(df$Year))),
+                column(3, selectInput(inputId = "position2",
+                                      label = "Select Position",
+                                      choices = unique(df$Pos)))
+              )
 
-                selectInput(inputId = "year",
-                            label = "Select Year",
-                            choices = unique(df$Year)),
-                selectInput(inputId = "position",
-                            label = "Select Position",
-                            choices = unique(df$Pos)),
-                selectInput(inputId = "stat_cat",
-                            label = "Select Statistic",
-                            choices = names(df)[6:29])
-
-              )),
+              ),
       
       tabItem(tabName = "playerprog",
               
               selectInput(inputId = "player",
-                            label = "Select Player",
-                            choices = unique(df$Player)),
+                          label = "Select Player",
+                          choices = unique(df$Player)),
               
               fluidRow(
-                column(12, DT::dataTableOutput("difftable")))
-                
+                column(12, DT::dataTableOutput("difftable"))),
               
+              fluidRow(
+                column(6, selectInput(inputId = "stat4",
+                                      label = "Select Statistic",
+                                      choices = names(df)[6:31])),
+                column(6, selectInput(inputId = "stat5",
+                                      label = "Select Another Statistic",
+                                      choices = names(df)[6:31]))
+              ),
+              
+              fluidRow(
+                column(6, plotOutput("playprog1")),
+                column(6, plotOutput("playprog2"))
+              )
               
               ),
 
       tabItem(tabName = "playervs",
-              fluidRow(
-                column(12, DT::dataTableOutput('twoplayer'))),
-
+              
               fluidRow(
                 column(4, selectInput(inputId = "player1",
                                       label = "Select Player 1",
@@ -64,10 +93,7 @@ dashboardPage(
               ),
               
               fluidRow(
-                column(4, plotOutput('gg')),
-                column(4, plotOutput('ggg')),
-                column(4, plotOutput('salary'))
-              ),
+                column(12, DT::dataTableOutput('twoplayer'))),
               
               fluidRow(
                 column(4, selectInput(inputId = "stat1",
@@ -76,16 +102,14 @@ dashboardPage(
                 column(4, selectInput(inputId = "stat2",
                                       label = "Select Another Statistic",
                                       choices = names(df)[6:29]))
-              )
+              ),
               
-                
-                
-                
+              fluidRow(
+                column(4, plotOutput('gg')),
+                column(4, plotOutput('ggg')),
+                column(4, plotOutput('salary'))
               )
-
-
-
-
+              )
 
     )
   )

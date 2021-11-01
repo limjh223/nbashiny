@@ -24,3 +24,6 @@ apply(filter(newdf, Player == "LeBron James")[, c(-1)], 2, diff)
 filter(df, (Player == "LeBron James" | Player == "Carmelo Anthony") & Year == 2008)
 # bron_diff <- apply(bron[, c(-1)],2, diff)
 # bron_diff
+
+filter(df, Player == "Carmelo Anthony") %>% 
+  ggplot()+ geom_point(aes(x = Year, y = Assists))
