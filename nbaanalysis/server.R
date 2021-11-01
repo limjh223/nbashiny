@@ -50,10 +50,18 @@ shinyServer(function(input, output, session) {
       ylab(input$stat2)
   })
   
+  #render another one in the same row lmao
+  output$gggg <- renderPlot({
+    filter(df, (Player == as.character(input$player1) | Player == as.character(input$player2)) & Year == input$season)%>%
+      ggplot() + geom_bar(aes(x = Player, y = get(input$stat3), fill = Player), position = "dodge", stat = "identity") +
+      ylab(input$stat3)
+  })
+  
   #render a barplot that shows the salary differences
   output$salary <- renderPlot({
     filter(df, (Player == as.character(input$player1) | Player == as.character(input$player2)) & Year == input$season)%>%
-      ggplot() + geom_bar(aes(x = Player, y = salary, fill = Player), position = "dodge", stat = "identity")
+      ggplot() + geom_bar(aes(x = Player, y = salary, fill = Player), position = "dodge", stat = "identity") +
+      ggtitle(paste("Salary Difference in", input$season))
   })
   
   #render a scatter-line plot that shows how a player progressed 
@@ -61,14 +69,14 @@ shinyServer(function(input, output, session) {
   output$playprog1 <- renderPlot({
     filter(df, Player == as.character(input$player)) %>% 
       ggplot(aes(x = Year, y = get(input$stat4)))+ geom_point(size = 4) +
-      geom_line(color = "grey") + ylab(input$stat4)
+      geom_line(color = "grey") + ylab(input$stat4) + coord_cartesian(xlim = input$slider)
   })
   
   #render the same plot above with a different statistic
   output$playprog2 <- renderPlot({
     filter(df, Player == as.character(input$player)) %>% 
       ggplot(aes(x = Year, y = get(input$stat5)))+ geom_point(size = 4) +
-      geom_line(color = "grey") + ylab(input$stat5)
+      geom_line(color = "grey") + ylab(input$stat5) + coord_cartesian(xlim = input$slider2)
   })
   
   
