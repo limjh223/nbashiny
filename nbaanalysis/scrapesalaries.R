@@ -50,6 +50,6 @@ salaries = raw %>%
   mutate(rank = as.numeric(rank)) %>% arrange(season, rank) %>%
   mutate(season = ifelse(season == 'es/_', 2021, season))
 
-# export data
+# export data as a csv file
 write_csv(salaries, 'nba-salaries2000-21.csv')
 
