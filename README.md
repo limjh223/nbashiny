@@ -19,7 +19,7 @@
 - cleaned the dataframe to get rid of stars on certain players' names and get rid of rows that included players' statistics that were recorded separately for different teams when the player played for those teams in the same season and only kept the season totals
 
 ## Attributes
-- Player: Player's name   
+- **Player** : Player's name   
 - Pos: Player's position       
 - Age: Player's age     
 - Tm: Team Player played for
