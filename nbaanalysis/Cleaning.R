@@ -2,6 +2,8 @@ stats <- read.csv("PlayersStats.csv")
 salaries <- read.csv("nba-salaries2000-21.csv")
 View(stats)
 View(salaries)
+
+# removed all the rows that just consisted of N/As
 stats_complete <- stats[!is.na(stats$Age),]
 
 View(stats_complete)
