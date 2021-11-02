@@ -20,35 +20,35 @@
 
 ## Attributes
 - **Player** : Player's name   
-- Pos: Player's position       
-- Age: Player's age     
-- Tm: Team Player played for
+- **Pos**: Player's position       
+- **Age**: Player's age     
+- **Tm**: Team Player played for
   - (TOT means that player played for multiple teams and the statistics for each team were summed up)        
-- G: Total # of games played      
-- GameStart: # of games started (there are a lot of players who come off the bench so they do not count)
-- MinPlayed: # of minutes played
-- FieldGoal: # of 2 pointers and 3 pointers made
-- FGA: # of 2 pointers and 3 pointers attempted      
-- FGPct: ratio of FieldGoal to FGA   
-- ThrMade: # of 3 pointers made   
-- ThrAtt: # of 3 pointers attempted   
-- ThrPct: ratio of ThrMade to ThrAtt    
-- TwoMade: # of 2 pointers made  
-- TwoAtt: # of 2 pointers attempted   
-- TwoPct: ratio of TwoMade to TwoAtt   
-- EFGPct: effective field goal percentage   
-- FT: # of free throws made        
-- FTA: # of free throws attempted     
-- FTPct: ratio of FT to FTA    
-- ORB: # of offensive rebounds       
-- DRB: # of defensive rebounds      
-- TotReb: sum of ORB and DRB    
-- Assists: # of assists   
-- Steals: # of steals   
-- Blocks: # of blocks    
-- TOV: # of turnovers       
-- PF: # of fouls committed        
-- Points: # of points scored    
-- Year: season of the above statistics recorded     
-- salary: salary of the player for the above year   
+- **G**: Total # of games played      
+- **GameStart**: # of games started (there are a lot of players who come off the bench so they do not count)
+- **MinPlayed**: # of minutes played
+- **FieldGoal**: # of 2 pointers and 3 pointers made
+- **FGA**: # of 2 pointers and 3 pointers attempted      
+- **FGPct**: ratio of FieldGoal to FGA   
+- **ThrMade**: # of 3 pointers made   
+- **ThrAtt**: # of 3 pointers attempted   
+- **ThrPct**: ratio of ThrMade to ThrAtt    
+- **TwoMade**: # of 2 pointers made  
+- **TwoAtt**: # of 2 pointers attempted   
+- **TwoPct**: ratio of TwoMade to TwoAtt   
+- **EFGPct**: effective field goal percentage   
+- **FT**: # of free throws made        
+- **FTA**: # of free throws attempted     
+- **FTPct**: ratio of FT to FTA    
+- **ORB**: # of offensive rebounds       
+- **DRB**: # of defensive rebounds      
+- **TotReb**: sum of ORB and DRB    
+- **Assists**: # of assists   
+- **Steals**: # of steals   
+- **Blocks**: # of blocks    
+- **TOV**: # of turnovers       
+- **PF**: # of fouls committed        
+- **Points**: # of points scored    
+- **Year**: season of the above statistics recorded     
+- **salary**: salary of the player for the above year   
 
