@@ -57,4 +57,7 @@
 - use a different website to scrape salaries as a lot of data from the early to mid 2000s were missing
 - render plots to show different statistical and salary correlations are changing over time for certain positions
 - scrape different statistics that effectively evaluates players better to get a better picture of player comparison
-- create a meaningful metric that is able to determine whether a player was overpaid, underpaid, or paid the right amount for the season
+- create a meaningful metric that is able to determine whether a player was:
+  - overpaid
+  - underpaid
+  - paid the right amount
