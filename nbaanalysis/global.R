@@ -19,7 +19,7 @@ df <- df %>%
     Points = PTS)
   
 
-#creating data for player progression
+#creating data for player progression since diff function is not useful for characters
 newdf <- df %>% select(-(2:4))
 
 
